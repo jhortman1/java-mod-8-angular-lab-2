@@ -1,3 +1,16 @@
 <div style="text-align:center">
   <h1>Welcome to {{ title }}!</h1>
+  Enter name of the Athlete: <input type="text" [(ngModel)]="athleteName"/>
+  Enter sport of the Athlete: <input type="text" [(ngModel)]="sport"/>
+  Check if player is active: <input type="checkbox"[(ngModel)]="active">
+  <div>
+    <button (click)=onCreateAthlete()>Create Athlete</button>
+  </div>
+  <div>
+    <ul>
+      <li *ngFor="let currentAthlete of athletes">
+        {{currentAthlete.athleteName}}: {{currentAthlete.sport}}: {{currentAthlete.active ? "is active":"is not active"}}
+      </li>
+    </ul>
+  </div>
 </div>
